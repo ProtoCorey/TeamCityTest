@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="a7dc9bef-5a63-4082-ae8e-1c1adacf0fc6" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>DailyBuildTemplate</name>
+  <description>This is a pipeline to do a daily builds as set up in the build config</description>
+  <settings>
+    <options>
+      <option name="allowExternalStatus" value="true" />
+      <option name="publishArtifactCondition" value="SUCCESSFUL" />
+    </options>
+    <parameters>
+      <param name="buildPath" value="D:\TeamCity\DailyBuilds" />
+      <param name="buildProfile" value="googleDebugApk" spec="select data_6='iosDebugCn' data_5='iosReleaseCn' data_8='appleDemoDebug' data_7='appleDemo' display='normal' data_2='iosRelease' data_1='iosDebug' data_4='googleRelease' data_3='googleDebugApk'" />
+      <param name="executionMethod" value="JenkinsEntryPoint.Jenkins.Build" />
+      <param name="keystorePassword" value="credentialsJSON:cff21aba-a82f-4051-8764-6f2d186ce80f" spec="password readOnly='true' label='keystorePassword' display='hidden'" />
+      <param name="keystorePath" value="C:\TeamCity\Provisioning\Android\googlePlay.keystore" />
+      <param name="repository" value="" />
+      <param name="unityPassword" value="credentialsJSON:583ff0c7-aee4-4b93-8f86-ed0679baea3e" spec="password readOnly='true' label='unityPassword' display='hidden'" />
+      <param name="unitySerial" value="credentialsJSON:adf9cda8-53c0-4b5f-adae-bbca1906ecbf" spec="password readOnly='true' label='unitySerial' display='hidden'" />
+      <param name="unityUsername" value="credentialsJSON:5e1e3ae2-c3d5-4fb8-ad77-5314edf6d33d" spec="password display='hidden' readOnly='true' label='unityUsername'" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_2" name="Update Plastic" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[cm workspace create %repository%Build %teamCityFolder%%repository%%Build --repository=%repository%@%plasticServer% 
+cd /d %teamCityFolder%%repository%Build
+cm undo -r
+cm switch "%branch%"
+cm update]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_3" name="Build" type="unity">
+        <parameters>
+          <param name="arguments" value="-username %unityUsername% -password %unityPassword% -executeMethod %executionMethod% -serial %unitySerial% -keystorePath %keystorePath% -keystorePass %keystorePassword% -buildPath  %buildPath% -buildNumber %build.number% -buildProfile %buildProfile%" />
+          <param name="buildTarget" value="Android" />
+          <param name="noGraphics" value="true" />
+          <param name="projectPath" value="%teamCityFolder%%repository%Build" />
+          <param name="teamcity.build.workingDir" value="%teamCityFolder%%repository%Build" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="unityVersion" value="2020.3." />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</template>
+
