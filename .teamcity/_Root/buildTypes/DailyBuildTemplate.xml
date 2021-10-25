@@ -23,7 +23,7 @@
       <runner id="RUNNER_2" name="Update Plastic" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[cm workspace create %repository%Build %teamCityFolder%%repository%%Build --repository=%repository%@%plasticServer% 
-cd /d %teamCityFolder%%repository%Build
+cd /c %teamCityFolder%%repository%Build
 cm undo -r
 cm switch "%branch%"
 cm update]]></param>
