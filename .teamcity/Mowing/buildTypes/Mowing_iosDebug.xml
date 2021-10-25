@@ -8,7 +8,23 @@
       <param name="buildProfile" value="iosDebug" />
       <param name="target" value="iOS" />
     </parameters>
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_1" name="" type="ssh-deploy-runner">
+        <conditions>
+          <equals name="target" value="iOS" />
+        </conditions>
+        <parameters>
+          <param name="jetbrains.buildServer.deployer.sourcePath" value="**" />
+          <param name="jetbrains.buildServer.deployer.ssh.transport" value="jetbrains.buildServer.deployer.ssh.transport.scp" />
+          <param name="jetbrains.buildServer.deployer.targetUrl" value="192.168.0.10:~/Documents/" />
+          <param name="jetbrains.buildServer.deployer.username" value="jenkins" />
+          <param name="jetbrains.buildServer.sshexec.authMethod" value="PWD" />
+          <param name="secure:jetbrains.buildServer.deployer.password" value="credentialsJSON:e5ea4ffa-bdce-4304-af50-7e2f649d4321" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcitySshKey" value="build_mac_ed25519" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings />
     <requirements />
     <build-triggers />
