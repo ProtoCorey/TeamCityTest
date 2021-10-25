@@ -53,7 +53,7 @@ cm update]]></param>
           <param name="jetbrains.buildServer.deployer.targetUrl" value="192.168.0.10:iosBuildTest" />
           <param name="jetbrains.buildServer.deployer.username" value="jenkins" />
           <param name="jetbrains.buildServer.sshexec.authMethod" value="UPLOADED_KEY" />
-          <param name="secure:jetbrains.buildServer.deployer.password" value="credentialsJSON:1a6431a0-06d5-476b-8185-df8dcc7bb933" />
+          <param name="secure:jetbrains.buildServer.deployer.password" value="credentialsJSON:e5ea4ffa-bdce-4304-af50-7e2f649d4321" />
           <param name="teamcity.step.mode" value="default" />
           <param name="teamcitySshKey" value="id_rsa" />
         </parameters>
