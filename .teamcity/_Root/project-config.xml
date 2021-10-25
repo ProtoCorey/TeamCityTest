@@ -5,7 +5,7 @@
   <parameters>
     <param name="branch" value="" />
     <param name="plasticServer" value="protostar@cloud" />
-    <param name="teamCityFolder" value="C:/TeamCityBuilds/" />
+    <param name="teamCityFolder" value="D:/TeamCity/" />
   </parameters>
   <project-extensions>
     <extension id="PROJECT_EXT_1" type="ReportTab">
