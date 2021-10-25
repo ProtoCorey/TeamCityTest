@@ -42,8 +42,7 @@ cm update]]></param>
           <param name="arguments" value="-username %unityUsername% -password %unityPassword% -executeMethod %executionMethod% -serial %unitySerial% -keystorePath %keystorePath% -keystorePass %keystorePassword% -buildPath  %buildPath% -buildNumber %build.number% -buildProfile %buildProfile%" />
           <param name="buildTarget" value="Android" />
           <param name="noGraphics" value="true" />
-          <param name="projectPath" value="%teamCityFolder%%repository%Build" />
-          <param name="teamcity.build.workingDir" value="%teamCityFolder%%repository%Build" />
+          <param name="projectPath" value="%teamcity.build.checkoutDir%" />
           <param name="teamcity.step.mode" value="default" />
           <param name="unityVersion" value="2020.3." />
         </parameters>
