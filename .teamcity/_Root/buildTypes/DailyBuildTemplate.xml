@@ -6,6 +6,8 @@
     <options>
       <option name="allowExternalStatus" value="true" />
       <option name="artifactRules" value="*/" />
+      <option name="checkoutDirectory" value="%teamCityFolder%%repository%Build" />
+      <option name="checkoutMode" value="MANUAL" />
       <option name="enableHangingBuildsDetection" value="false" />
       <option name="publishArtifactCondition" value="SUCCESSFUL" />
     </options>
