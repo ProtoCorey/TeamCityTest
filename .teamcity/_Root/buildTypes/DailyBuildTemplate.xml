@@ -5,7 +5,7 @@
   <settings>
     <options>
       <option name="allowExternalStatus" value="true" />
-      <option name="artifactRules" value="+%teamCityFolder%%repository%Build=&gt;Deploy" />
+      <option name="artifactRules" value="/Deploy=&gt;Deploy" />
       <option name="publishArtifactCondition" value="SUCCESSFUL" />
     </options>
     <parameters>
