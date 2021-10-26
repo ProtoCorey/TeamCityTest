@@ -7,7 +7,22 @@
       <option name="checkoutDirectory" value="~/TeamCityBuilds/%repository%Build/%repository%_%buildProfile%_1.19.9_43" />
     </options>
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_6" name="" type="Xcode">
+        <parameters>
+          <param name="arch" value="default" />
+          <param name="buildActions" value="clean build" />
+          <param name="configuration" value="###default###" />
+          <param name="customBuildOutputDir" value="build" />
+          <param name="platform" value="iphoneos" />
+          <param name="project" value="~/TeamCityBuilds/%repository%Build/%repository%_%dep.Mowing_iosDebug.buildProfile%_1.19.0_1190_43" />
+          <param name="sdk" value="default" />
+          <param name="target" value="###default###" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="xcode" value="3" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings />
     <requirements />
     <build-triggers>
