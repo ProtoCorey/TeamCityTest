@@ -28,7 +28,7 @@
       <runner id="RUNNER_2" name="Update Plastic" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[echo "Checkout Dir: %teamcity.build.checkoutDir%"
-m workspace create %repository%Build %teamCityFolder%%repository%%Build --repository=%repository%@%plasticServer% 
+cm workspace create %repository%Build %teamCityFolder%%repository%%Build --repository=%repository%@%plasticServer% 
 cd /d %teamCityFolder%%repository%Build
 cm undo -r
 cm switch "%branch%"
