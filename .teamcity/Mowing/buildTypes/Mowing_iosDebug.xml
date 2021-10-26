@@ -3,6 +3,9 @@
   <name>Mowing_iosDebug</name>
   <description>This is a pipeline to do Mowing builds as set up in the build config from Mowing Default</description>
   <settings ref="DailyBuildTemplate">
+    <options>
+      <option name="artifactRules" value="" />
+    </options>
     <parameters>
       <param name="branch" value="main" />
       <param name="buildProfile" value="iosDebug" />
