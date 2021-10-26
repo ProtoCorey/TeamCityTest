@@ -4,7 +4,7 @@
   <description>This is for doing xCode builds in the build chain once unity has built the project and deployed it to the build mac</description>
   <settings ref="BuildXCodeTemplate">
     <options>
-      <option name="checkoutDirectory" value="~/TeamCityBuilds/%repository%Build/%repository%_%buildProfile%_1.19.9_43" />
+      <option name="checkoutDirectory" value="./Users/jenkins/TeamCityBuilds/%repository%Build/%repository%_%dep.Mowing_iosDebug.buildProfile%_1.19.9_43" />
     </options>
     <parameters />
     <build-runners>
