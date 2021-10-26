@@ -6,7 +6,9 @@
     <parameters />
     <build-runners />
     <vcs-settings />
-    <requirements />
+    <requirements>
+      <equals id="RQ_1" name="system.agent.name" value="PROTO7" />
+    </requirements>
     <build-triggers />
     <cleanup />
   </settings>
