@@ -31,7 +31,7 @@
 cm workspace create %repository%Build %teamCityFolder%%repository%%Build --repository=%repository%@%plasticServer% 
 cd /d %teamCityFolder%%repository%Build
 cm undo -r
-echo "Switching to branch %branch%"
+echo "Switching to branch [%branch%"]
 cm switch "%branch%"
 cm update]]></param>
           <param name="teamcity.step.mode" value="default" />
