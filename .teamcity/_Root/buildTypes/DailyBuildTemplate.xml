@@ -38,6 +38,13 @@ cm update]]></param>
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_4" name="Update version information" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo &quot;Updating version information&quot;" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_3" name="Build" type="unity">
         <parameters>
           <param name="arguments" value="-username %unityUsername% -password %unityPassword% -executeMethod %executionMethod% -serial %unitySerial% -keystorePath %keystorePath% -keystorePass %keystorePassword% -buildPath  %buildPath% -buildNumber %build.number% -buildProfile %buildProfile%" />
@@ -61,13 +68,6 @@ cm update]]></param>
           <param name="secure:jetbrains.buildServer.deployer.password" value="credentialsJSON:e5ea4ffa-bdce-4304-af50-7e2f649d4321" />
           <param name="teamcity.step.mode" value="default" />
           <param name="teamcitySshKey" value="build_mac_ed25519" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_4" name="Update version information" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="echo &quot;Updating version information&quot;" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
