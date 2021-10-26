@@ -63,6 +63,13 @@ cm update]]></param>
           <param name="teamcitySshKey" value="build_mac_ed25519" />
         </parameters>
       </runner>
+      <runner id="RUNNER_4" name="Update version information" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo &quot;Updating version information&quot;" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings />
     <requirements />
