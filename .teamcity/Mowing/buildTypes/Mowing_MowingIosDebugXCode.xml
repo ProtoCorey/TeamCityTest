@@ -22,6 +22,18 @@
           <param name="xcode" value="3" />
         </parameters>
       </runner>
+      <runner id="RUNNER_8" name="Parameters set by build" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo "Parameters set by build:"
+echo "\tBuild Id: %dep.Mowing_iosDebug.pgfBuildId%"
+echo "\tBuild Number: %dep.Mowing_iosDebug.pgfBuildNum%"
+echo "\tBundle Id: %dep.Mowing_iosDebug.pgfBundleId%"
+echo "\tGame Version: %dep.Mowing_iosDebug.pgfGameVersion%"
+echo "\tProvisioning Profile: %dep.Mowing_iosDebug.pgfProvisioningProfile%]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings />
     <requirements />
