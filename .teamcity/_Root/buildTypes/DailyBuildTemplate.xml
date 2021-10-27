@@ -21,6 +21,7 @@
       <param name="pgfBuildNum" value="" />
       <param name="pgfBundleId" value="" />
       <param name="pgfGameVersion" value="" />
+      <param name="pgfProvisioningProfile" value="" />
       <param name="repository" value="" />
       <param name="target" value="" />
       <param name="teamCityFolder" value="C:/TeamCityBuilds/" />
