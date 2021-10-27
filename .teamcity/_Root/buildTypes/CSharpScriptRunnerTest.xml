@@ -9,10 +9,7 @@
       <runner id="RUNNER_4" name="" type="csharpScript">
         <parameters>
           <param name="csharpToolPath" value="%teamcity.tool.TeamCity.csi.DEFAULT%" />
-          <param name="scriptContent"><![CDATA[foreach(var value in Props)
-{
-	WriteLine($"{value}");
-}]]></param>
+          <param name="scriptContent" value="WriteLine($&quot;{Prop[&quot;testParam&quot;}&quot;);" />
           <param name="scriptType" value="customScript" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
