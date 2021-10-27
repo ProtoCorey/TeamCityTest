@@ -6,7 +6,7 @@
       <option name="checkoutMode" value="MANUAL" />
     </options>
     <parameters>
-      <param name="TestParam" value="TestyMcTest" />
+      <param name="system.TestParam" value="TestyMcTest" />
     </parameters>
     <build-runners>
       <runner id="RUNNER_4" name="" type="csharpScript">
