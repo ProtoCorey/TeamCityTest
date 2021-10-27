@@ -3,12 +3,43 @@
   <name>Mowing_iosDebug</name>
   <description>This is a pipeline to do Mowing builds as set up in the build config from Mowing Default</description>
   <settings ref="DailyBuildTemplate">
+    <options>
+      <option name="artifactRules" value="" />
+    </options>
     <parameters>
-      <param name="branch" value="main/Release1.18.0/HALLOWEEN" />
+      <param name="branch" value="main" />
       <param name="buildProfile" value="iosDebug" />
       <param name="target" value="iOS" />
     </parameters>
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_1" name="" type="ssh-deploy-runner">
+        <conditions>
+          <equals name="target" value="iOS" />
+        </conditions>
+        <parameters>
+          <param name="jetbrains.buildServer.deployer.sourcePath" value="/Deploy/%buildProfile%" />
+          <param name="jetbrains.buildServer.deployer.ssh.transport" value="jetbrains.buildServer.deployer.ssh.transport.scp" />
+          <param name="jetbrains.buildServer.deployer.targetUrl" value="192.168.0.10:TeamCityBuilds/%repository%Build/" />
+          <param name="jetbrains.buildServer.deployer.username" value="jenkins" />
+          <param name="jetbrains.buildServer.sshexec.authMethod" value="PWD" />
+          <param name="secure:jetbrains.buildServer.deployer.password" value="credentialsJSON:e5ea4ffa-bdce-4304-af50-7e2f649d4321" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcitySshKey" value="build_mac_ed25519" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_7" name="Parameters set by build" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo "Parameters set by build:"
+echo "Build Id: %pgfBuildId%"
+echo "Build Number: %pgfBuildNum%"
+echo "Bundle Id: %pgfBundleId%"
+echo "Game Version: %pgfGameVersion%"
+echo "Provisioning Profile: %pgfProvisioningProfile%"]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings />
     <requirements />
     <build-triggers />

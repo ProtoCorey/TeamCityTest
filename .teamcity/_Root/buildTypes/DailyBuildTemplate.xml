@@ -5,16 +5,26 @@
   <settings>
     <options>
       <option name="allowExternalStatus" value="true" />
+      <option name="artifactRules" value="/Deploy" />
+      <option name="checkoutDirectory" value="%teamCityFolder%%repository%Build" />
+      <option name="checkoutMode" value="MANUAL" />
+      <option name="enableHangingBuildsDetection" value="false" />
       <option name="publishArtifactCondition" value="SUCCESSFUL" />
     </options>
     <parameters>
       <param name="buildPath" value="D:\TeamCity\DailyBuilds" />
       <param name="buildProfile" value="googleDebugApk" spec="select data_6='iosDebugCn' data_5='iosReleaseCn' data_8='appleDemoDebug' data_7='appleDemo' display='normal' data_2='iosRelease' data_1='iosDebug' data_4='googleRelease' data_3='googleDebugApk'" />
-      <param name="executionMethod" value="JenkinsEntryPoint.Jenkins.Build" />
+      <param name="executionMethod" value="TeamCityEntryPoint.TeamCity.Build" />
       <param name="keystorePassword" value="credentialsJSON:cff21aba-a82f-4051-8764-6f2d186ce80f" spec="password readOnly='true' label='keystorePassword' display='hidden'" />
       <param name="keystorePath" value="C:\TeamCity\Provisioning\Android\googlePlay.keystore" />
+      <param name="pgfBuildId" value="" />
+      <param name="pgfBuildNum" value="" />
+      <param name="pgfBundleId" value="" />
+      <param name="pgfGameVersion" value="" />
+      <param name="pgfProvisioningProfile" value="" />
       <param name="repository" value="" />
       <param name="target" value="" />
+      <param name="teamCityFolder" value="C:/TeamCityBuilds/" />
       <param name="unityPassword" value="credentialsJSON:583ff0c7-aee4-4b93-8f86-ed0679baea3e" spec="password readOnly='true' label='unityPassword' display='hidden'" />
       <param name="unitySerial" value="credentialsJSON:adf9cda8-53c0-4b5f-adae-bbca1906ecbf" spec="password readOnly='true' label='unitySerial' display='hidden'" />
       <param name="unityUsername" value="credentialsJSON:5e1e3ae2-c3d5-4fb8-ad77-5314edf6d33d" spec="password display='hidden' readOnly='true' label='unityUsername'" />
@@ -22,11 +32,11 @@
     <build-runners>
       <runner id="RUNNER_2" name="Update Plastic" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[echo "Running cm workspace create %repository%Build %teamCityFolder%%repository%%Build --repository=%repository%@%plasticServer%"
+          <param name="script.content"><![CDATA[echo "Checkout Dir: %teamcity.build.checkoutDir%"
 cm workspace create %repository%Build %teamCityFolder%%repository%%Build --repository=%repository%@%plasticServer% 
-echo "Folder %teamCityFolder%%repository%Build"
-cd /c %teamCityFolder%%repository%Build
+cd /d %teamCityFolder%%repository%Build
 cm undo -r
+echo "Switching to branch [%branch%"]
 cm switch "%branch%"
 cm update]]></param>
           <param name="teamcity.step.mode" value="default" />
@@ -38,8 +48,7 @@ cm update]]></param>
           <param name="arguments" value="-username %unityUsername% -password %unityPassword% -executeMethod %executionMethod% -serial %unitySerial% -keystorePath %keystorePath% -keystorePass %keystorePassword% -buildPath  %buildPath% -buildNumber %build.number% -buildProfile %buildProfile%" />
           <param name="buildTarget" value="Android" />
           <param name="noGraphics" value="true" />
-          <param name="projectPath" value="%teamCityFolder%%repository%Build" />
-          <param name="teamcity.build.workingDir" value="%teamCityFolder%%repository%Build" />
+          <param name="projectPath" value="%teamcity.build.checkoutDir%" />
           <param name="teamcity.step.mode" value="default" />
           <param name="unityVersion" value="2020.3." />
         </parameters>
@@ -49,19 +58,33 @@ cm update]]></param>
           <equals name="target" value="iOS" />
         </conditions>
         <parameters>
-          <param name="jetbrains.buildServer.deployer.sourcePath" value="/Deploy*" />
+          <param name="jetbrains.buildServer.deployer.sourcePath" value="/Deploy/%buildProfile%" />
           <param name="jetbrains.buildServer.deployer.ssh.transport" value="jetbrains.buildServer.deployer.ssh.transport.scp" />
-          <param name="jetbrains.buildServer.deployer.targetUrl" value="192.168.0.10:iosBuildTest" />
+          <param name="jetbrains.buildServer.deployer.targetUrl" value="192.168.0.10:TeamCityBuilds/%repository%Build/" />
           <param name="jetbrains.buildServer.deployer.username" value="jenkins" />
-          <param name="jetbrains.buildServer.sshexec.authMethod" value="UPLOADED_KEY" />
-          <param name="secure:jetbrains.buildServer.deployer.password" value="credentialsJSON:1a6431a0-06d5-476b-8185-df8dcc7bb933" />
+          <param name="jetbrains.buildServer.sshexec.authMethod" value="PWD" />
+          <param name="secure:jetbrains.buildServer.deployer.password" value="credentialsJSON:e5ea4ffa-bdce-4304-af50-7e2f649d4321" />
           <param name="teamcity.step.mode" value="default" />
-          <param name="teamcitySshKey" value="id_rsa" />
+          <param name="teamcitySshKey" value="build_mac_ed25519" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_7" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo "Parameters set by build:"
+echo "\tBuild Id: %pgfBuildId%"
+echo "\tBuild Number: %pgfBuildNum%"
+echo "\tBundle Id: %pgfBundleId%"
+echo "\tGame Version: %pgfGameVersion%"
+echo "\tProvisioning Profile: %pgfProvisioningProfile%]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
     <vcs-settings />
-    <requirements />
+    <requirements>
+      <equals id="RQ_2" name="system.agent.name" value="PROTO7" />
+    </requirements>
     <build-triggers />
     <cleanup />
   </settings>
