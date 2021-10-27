@@ -34,7 +34,7 @@ echo "Build Id: %pgfBuildId%"
 echo "Build Number: %pgfBuildNum%"
 echo "Bundle Id: %pgfBundleId%"
 echo "Game Version: %pgfGameVersion%"
-echo "Provisioning Profile: %pgfProvisioningProfile%]]></param>
+echo "Provisioning Profile: %pgfProvisioningProfile%"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
