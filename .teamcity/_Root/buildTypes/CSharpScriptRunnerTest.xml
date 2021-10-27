@@ -5,7 +5,21 @@
     <parameters>
       <param name="TestParam" value="TestyMcTest" />
     </parameters>
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_4" name="" type="csharpScript">
+        <parameters>
+          <param name="csharpToolPath" value="%teamcity.tool.TeamCity.csi.DEFAULT%" />
+          <param name="scriptContent"><![CDATA[#using system.collections.generic
+
+foreach(var key in Props.keys)
+{
+	WriteLine($"{key}: {Props[key]}");
+}]]></param>
+          <param name="scriptType" value="customScript" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings />
     <requirements />
     <build-triggers />
