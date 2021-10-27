@@ -27,7 +27,7 @@ echo "Provisioning Profile: %dep.Mowing_iosDebug.pgfProvisioningProfile%"]]></pa
           <param name="configuration" value="###default###" />
           <param name="customBuildOutputDir" value="build" />
           <param name="platform" value="iphoneos" />
-          <param name="project" value="%repository%Build/%repository%_%dep.Mowing_iosDebug.buildProfile%_1.19.0_1190_43/Unity-iPhone.xcodeproj" />
+          <param name="project" value="%repository%Build/%dep.Mowing_iosDebug.pgfBuildId%/Unity-iPhone.xcodeproj" />
           <param name="sdk" value="default" />
           <param name="target" value="###default###" />
           <param name="teamcity.step.mode" value="default" />
