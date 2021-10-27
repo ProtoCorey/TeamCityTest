@@ -15,6 +15,7 @@
       <param name="buildPath" value="D:\TeamCity\DailyBuilds" />
       <param name="buildProfile" value="googleDebugApk" spec="select data_6='iosDebugCn' data_5='iosReleaseCn' data_8='appleDemoDebug' data_7='appleDemo' display='normal' data_2='iosRelease' data_1='iosDebug' data_4='googleRelease' data_3='googleDebugApk'" />
       <param name="executionMethod" value="TeamCityEntryPoint.TeamCity.Build" />
+      <param name="gameVersion" value="" />
       <param name="keystorePassword" value="credentialsJSON:cff21aba-a82f-4051-8764-6f2d186ce80f" spec="password readOnly='true' label='keystorePassword' display='hidden'" />
       <param name="keystorePath" value="C:\TeamCity\Provisioning\Android\googlePlay.keystore" />
       <param name="repository" value="" />
