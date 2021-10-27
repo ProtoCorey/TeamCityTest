@@ -17,10 +17,10 @@
       <param name="executionMethod" value="TeamCityEntryPoint.TeamCity.Build" />
       <param name="keystorePassword" value="credentialsJSON:cff21aba-a82f-4051-8764-6f2d186ce80f" spec="password readOnly='true' label='keystorePassword' display='hidden'" />
       <param name="keystorePath" value="C:\TeamCity\Provisioning\Android\googlePlay.keystore" />
+      <param name="pgfBuildNum" value="" />
       <param name="repository" value="" />
       <param name="target" value="" />
       <param name="teamCityFolder" value="C:/TeamCityBuilds/" />
-      <param name="unityBuildNum" value="" />
       <param name="unityGameVersion" value="" />
       <param name="unityPassword" value="credentialsJSON:583ff0c7-aee4-4b93-8f86-ed0679baea3e" spec="password readOnly='true' label='unityPassword' display='hidden'" />
       <param name="unitySerial" value="credentialsJSON:adf9cda8-53c0-4b5f-adae-bbca1906ecbf" spec="password readOnly='true' label='unitySerial' display='hidden'" />
