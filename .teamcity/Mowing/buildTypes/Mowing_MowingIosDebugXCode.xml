@@ -8,7 +8,7 @@
     </options>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_8" name="Parameters set by build" type="simpleRunner">
+      <runner id="RUNNER_8" name="Parameters set by last build" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[echo "Parameters set by build:"
 echo "\tBuild Id: %dep.Mowing_iosDebug.pgfBuildId%"
