@@ -19,7 +19,7 @@
         <parameters>
           <param name="jetbrains.buildServer.deployer.sourcePath" value="/Deploy/%buildProfile%" />
           <param name="jetbrains.buildServer.deployer.ssh.transport" value="jetbrains.buildServer.deployer.ssh.transport.scp" />
-          <param name="jetbrains.buildServer.deployer.targetUrl" value="192.168.0.10:TeamCityBuilds/%repository%Build/" />
+          <param name="jetbrains.buildServer.deployer.targetUrl" value="192.168.0.99:TeamCityBuilds/%repository%Build/" />
           <param name="jetbrains.buildServer.deployer.username" value="jenkins" />
           <param name="jetbrains.buildServer.sshexec.authMethod" value="PWD" />
           <param name="secure:jetbrains.buildServer.deployer.password" value="credentialsJSON:e5ea4ffa-bdce-4304-af50-7e2f649d4321" />
