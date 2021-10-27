@@ -19,6 +19,7 @@
       <param name="keystorePath" value="C:\TeamCity\Provisioning\Android\googlePlay.keystore" />
       <param name="pgfBuildId" value="" />
       <param name="pgfBuildNum" value="" />
+      <param name="pgfBundleId" value="" />
       <param name="pgfGameVersion" value="" />
       <param name="repository" value="" />
       <param name="target" value="" />
