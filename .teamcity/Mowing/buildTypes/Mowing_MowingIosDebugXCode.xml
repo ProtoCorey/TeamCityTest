@@ -4,7 +4,7 @@
   <description>This is for doing xCode builds in the build chain once unity has built the project and deployed it to the build mac</description>
   <settings ref="BuildXCodeTemplate">
     <options>
-      <option name="checkoutDirectory" value="/Users/jenkins/TeamCityBuilds/" />
+      <option name="checkoutDirectory" value="/Users/Mikzor/TeamCityBuilds/" />
     </options>
     <parameters />
     <build-runners>
