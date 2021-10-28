@@ -11,7 +11,7 @@
       <param name="buildProfile" value="iosDebug" />
       <param name="target" value="iOS" />
     </parameters>
-    <build-runners>
+    <build-runners order="RUNNER_2, RUNNER_3, RUNNER_9, RUNNER_1, RUNNER_7">
       <runner id="RUNNER_3" name="Build" type="unity">
         <parameters>
           <param name="arguments" value="-username %unityUsername% -password %unityPassword% -executeMethod %executionMethod% -serial %unitySerial% -keystorePath %keystorePath% -keystorePass %keystorePassword% -buildPath  %buildPath% -buildNumber %build.number% -buildProfile %buildProfile%" />
