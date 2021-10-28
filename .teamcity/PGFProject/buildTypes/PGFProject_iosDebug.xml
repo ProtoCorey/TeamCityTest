@@ -8,7 +8,18 @@
       <param name="buildProfile" value="iosDebug" />
       <param name="target" value="iOS" />
     </parameters>
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_3" name="Build" type="unity">
+        <parameters>
+          <param name="arguments" value="-username %unityUsername% -password %unityPassword% -executeMethod %executionMethod% -serial %unitySerial% -keystorePath %keystorePath% -keystorePass %keystorePassword% -buildPath  %buildPath% -buildNumber %build.number% -buildProfile %buildProfile%" />
+          <param name="buildTarget" value="iOS" />
+          <param name="noGraphics" value="true" />
+          <param name="projectPath" value="%teamcity.build.checkoutDir%" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="unityVersion" value="2020.3." />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings />
     <requirements />
     <build-triggers />
