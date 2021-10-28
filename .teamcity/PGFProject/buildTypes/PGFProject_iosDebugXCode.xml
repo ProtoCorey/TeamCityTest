@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="3816cab4-3794-11ec-8d3d-0242ac130003" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="8ea21937-0c44-479e-9adc-243341903fe7" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
   <name>PGFProject_iosDebug_xCode</name>
   <description>This is for doing xCode builds in the build chain once unity has built the project and deployed it to the build mac</description>
   <settings ref="BuildXCodeTemplate">
