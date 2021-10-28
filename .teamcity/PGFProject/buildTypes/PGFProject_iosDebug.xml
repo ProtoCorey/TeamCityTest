@@ -3,6 +3,9 @@
   <name>PGFProject_iosDebug</name>
   <description>This is a pipeline to do PGFProject builds as set up in the build config from PGFProject Default</description>
   <settings ref="DailyBuildTemplate">
+    <disabled-settings>
+      <setting-ref ref="RUNNER_3" />
+    </disabled-settings>
     <parameters>
       <param name="branch" value="main" />
       <param name="buildProfile" value="iosDebug" />
