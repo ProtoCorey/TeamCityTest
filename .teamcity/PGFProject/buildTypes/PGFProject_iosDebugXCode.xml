@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="3816cab4-3794-11ec-8d3d-0242ac130003" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>PGFProject_iosDebug_xCode</name>
+  <description>This is for doing xCode builds in the build chain once unity has built the project and deployed it to the build mac</description>
+  <settings ref="BuildXCodeTemplate">
+    <options>
+      <option name="checkoutDirectory" value="/Users/Mikzor/TeamCityBuilds/" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_8" name="Parameters set by last build" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo "Parameters set by build:"
+echo "Build Id: %dep.PGFProject_iosDebug.pgfBuildId%"
+echo "Build Number: %dep.PGFProject_iosDebug.pgfBuildNum%"
+echo "Bundle Id: %dep.PGFProject_iosDebug.pgfBundleId%"
+echo "Game Version: %dep.PGFProject_iosDebug.pgfGameVersion%"
+echo "Provisioning Profile: %dep.PGFProject_iosDebug.pgfProvisioningProfile%"]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_6" name="" type="Xcode">
+        <parameters>
+          <param name="arch" value="default" />
+          <param name="buildActions" value="clean build" />
+          <param name="configuration" value="###default###" />
+          <param name="customBuildOutputDir" value="build" />
+          <param name="platform" value="default" />
+          <param name="project" value="%repository%Build/%dep.PGFProject_iosDebug.pgfBuildId%/Unity-iPhone.xcodeproj" />
+          <param name="scheme" value="Unity-iPhone" />
+          <param name="sdk" value="default" />
+          <param name="target" value="###default###" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="xcode" value="4" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_1" type="buildDependencyTrigger">
+        <parameters>
+          <param name="afterSuccessfulBuildOnly" value="true" />
+          <param name="branchFilter" value="+:&lt;default&gt;" />
+          <param name="dependsOn" value="Mowing_iosDebug" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <dependencies>
+      <depend-on sourceBuildTypeId="Mowing_iosDebug">
+        <options>
+          <option name="run-build-if-dependency-failed" value="CANCEL" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+
