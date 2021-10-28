@@ -3,6 +3,7 @@
   <name>PGFProject</name>
   <description>This is a project for doing PGFProject builds</description>
   <parameters>
+    <param name="branch" value="main" />
     <param name="repository" value="PGFProject" />
   </parameters>
   <cleanup />
