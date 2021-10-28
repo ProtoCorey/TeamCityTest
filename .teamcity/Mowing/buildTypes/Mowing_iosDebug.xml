@@ -52,6 +52,13 @@ echo "Provisioning Profile: %pgfProvisioningProfile%"]]></param>
           <param name="unityVersion" value="2020.3." />
         </parameters>
       </runner>
+      <runner id="RUNNER_5" name="Manual Unity Build" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="&quot;C:\Program Files\Unity\Hub\Editor\2020.3.18f1\Editor\Unity.exe&quot; -quit -batchmode -nographics -buildTarget %target% -projectPath %teamcity.build.checkoutDir% -executeMethod %executionMethod% -buildNumber %build.number% -buildProfile %buildProfile% -buildPath %buildPath% -keystorePass %keystorePassword% -keystorePath %keystorePath% -logfile" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings />
     <requirements />
