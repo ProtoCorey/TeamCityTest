@@ -28,6 +28,7 @@
       <param name="unityPassword" value="credentialsJSON:583ff0c7-aee4-4b93-8f86-ed0679baea3e" spec="password readOnly='true' label='unityPassword' display='hidden'" />
       <param name="unitySerial" value="credentialsJSON:adf9cda8-53c0-4b5f-adae-bbca1906ecbf" spec="password readOnly='true' label='unitySerial' display='hidden'" />
       <param name="unityUsername" value="credentialsJSON:5e1e3ae2-c3d5-4fb8-ad77-5314edf6d33d" spec="password display='hidden' readOnly='true' label='unityUsername'" />
+      <param name="unityVersion" value="" />
     </parameters>
     <build-runners>
       <runner id="RUNNER_2" name="Update Plastic" type="simpleRunner">
