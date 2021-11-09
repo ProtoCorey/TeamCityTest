@@ -80,9 +80,7 @@ echo "\tProvisioning Profile: %pgfProvisioningProfile%]]></param>
       </runner>
     </build-runners>
     <vcs-settings />
-    <requirements>
-      <equals id="RQ_2" name="system.agent.name" value="PROTO7" />
-    </requirements>
+    <requirements />
     <build-triggers />
     <cleanup />
   </settings>
