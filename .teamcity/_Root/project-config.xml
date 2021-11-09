@@ -6,7 +6,7 @@
     <param name="branch" value="" />
     <param name="plasticServer" value="protostar@cloud" />
     <param name="teamCityFolder" value="C:/TeamCityBuilds/" />
-    <param name="unityDirectory" value="C:/Program Files/Unity" />
+    <param name="unityDirectory" value="C:/Program Files/Unity/" />
   </parameters>
   <project-extensions>
     <extension id="PROJECT_EXT_1" type="ReportTab">
