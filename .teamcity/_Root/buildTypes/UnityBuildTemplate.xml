@@ -51,15 +51,6 @@ cm update]]></param>
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
-      <runner id="RUNNER_3" name="Build" type="unity">
-        <parameters>
-          <param name="arguments" value="-username %unityUsername% -password %unityPassword% -executeMethod %executionMethod% -serial %unitySerial% -keystorePath %keystorePath% -keystorePass %keystorePassword% -buildPath  %buildPath% -buildNumber %build.number% -buildProfile %buildProfile%" />
-          <param name="noGraphics" value="true" />
-          <param name="projectPath" value="%teamcity.build.checkoutDir%" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="unityVersion" value="2020.3." />
-        </parameters>
-      </runner>
       <runner id="RUNNER_1" name="" type="ssh-deploy-runner">
         <conditions>
           <equals name="target" value="iOS" />
