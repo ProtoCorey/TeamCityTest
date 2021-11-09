@@ -7,7 +7,7 @@
       <param name="branch" value="main" />
       <param name="buildProfile" value="iosDebug" />
       <param name="target" value="iOS" />
-      <param name="unityVersion" value="2019.4.9f1" />
+      <param name="unityVersion" value="2020.3.18f1" />
     </parameters>
     <build-runners />
     <vcs-settings />
