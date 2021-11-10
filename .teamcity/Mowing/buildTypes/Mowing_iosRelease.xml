@@ -4,9 +4,10 @@
   <description>This is a pipeline to do Mowing builds as set up in the build config from Mowing Default</description>
   <settings ref="UnityBuildTemplate">
     <parameters>
-      <param name="branch" value="main/Release1.18.0/HALLOWEEN" />
+      <param name="branch" value="main" />
       <param name="buildProfile" value="iosRelease" />
       <param name="target" value="iOS" />
+      <param name="unityVersion" value="2020.3.18f1" />
     </parameters>
     <build-runners />
     <vcs-settings />
